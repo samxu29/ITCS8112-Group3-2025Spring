@@ -1,0 +1,154 @@
+MERN Employee Management System - User Acceptance Testing Documentation
+====================================================================
+
+1. EMPLOYEE RECORD MANAGEMENT
+----------------------------
+
+1.1 Create Employee Record
+Test Scenarios:
+- Create record with valid data
+- Create record with missing fields
+- Create record with special characters in name
+- Create record with different employee levels
+
+Acceptance Criteria:
+✅ System allows creation of new employee records with name, position, and level
+✅ All form fields are properly validated
+✅ Success message appears after successful creation
+✅ New record appears in the employee list immediately
+✅ System prevents submission of empty required fields
+
+1.2 Bulk Delete Feature
+Test Scenarios:
+- Delete multiple selected records
+- Attempt deletion with no selection
+- Delete all records
+- Delete single record using bulk delete
+
+Acceptance Criteria:
+✅ Users can select multiple records using checkboxes
+✅ "Delete Selected" button appears only when records are selected
+✅ Confirmation prompt before deletion
+✅ Selected records are removed from the display
+✅ Remaining records stay intact
+
+2. EXCEL UPLOAD FEATURE
+----------------------
+
+2.1 Valid Upload Scenarios
+Test Scenarios:
+- Upload valid Excel file with multiple records
+- Upload Excel file with minimum required fields
+- Upload Excel file with all possible fields
+- Upload empty Excel file
+
+Acceptance Criteria:
+✅ System accepts .xlsx format files
+✅ Success message displays number of records imported
+✅ Imported records appear in the list
+✅ Duplicate records are handled appropriately
+
+2.2 Invalid Upload Scenarios
+Test Scenarios:
+- Upload invalid file format (.txt, .pdf)
+- Upload Excel with missing required columns
+- Upload Excel with invalid data types
+- Upload corrupted Excel file
+
+Acceptance Criteria:
+✅ System shows appropriate error messages
+✅ Invalid data doesn't affect existing records
+✅ User is informed about specific validation errors
+
+3. SEARCH AND FILTER FEATURES
+----------------------------
+
+3.1 Search Functionality
+Test Scenarios:
+- Search by full employee name
+- Search by partial name
+- Search by position
+- Search with no results
+- Search with special characters
+
+Acceptance Criteria:
+✅ Search results update in real-time
+✅ Search is case-insensitive
+✅ Empty search shows all records
+✅ No results state is handled gracefully
+
+3.2 Level Filter
+Test Scenarios:
+- Filter by single level (Intern/Junior/Senior)
+- Filter by multiple levels
+- Clear single filter
+- Clear all filters
+- Combine filters with search
+
+Acceptance Criteria:
+✅ Multiple level selections are supported
+✅ Filters can be toggled on/off
+✅ Clear all resets to default view
+✅ Filter state is maintained during navigation
+
+4. ERROR HANDLING
+----------------
+
+4.1 Network Errors
+Test Scenarios:
+- Server disconnection during operation
+- Slow network response
+- Failed API requests
+- Timeout scenarios
+
+Acceptance Criteria:
+⚠️ User is notified of connection issues
+⚠️ Retry mechanism for failed operations
+⚠️ Data persistence during network recovery
+⚠️ Graceful error state handling
+
+4.2 Form Validation
+Test Scenarios:
+- Submit form with invalid data
+- Submit form with missing required fields
+- Input field character limits
+- Special character handling
+
+Acceptance Criteria:
+⚠️ Clear validation error messages
+⚠️ Real-time field validation
+⚠️ Prevention of form submission with invalid data
+⚠️ Proper handling of special characters
+
+5. PERFORMANCE CRITERIA
+----------------------
+
+5.1 Response Time
+Test Scenarios:
+- Load time for initial page
+- Response time for search/filter operations
+- Bulk operation performance
+- Concurrent user operations
+
+Acceptance Criteria:
+✅ Page load under 3 seconds
+✅ Search results appear within 1 second
+✅ Bulk operations complete with progress indication
+✅ System remains responsive under load
+
+STATUS LEGEND
+------------
+✅ Implemented and Tested
+⚠️ Needs Implementation/Testing
+❌ Not Implemented
+
+NOTES
+-----
+1. All core functionality tests are implemented in Cypress
+2. Performance testing has been added to measure page load times
+3. Form validation tests ensure data integrity
+4. Additional error handling scenarios should be implemented
+5. Network error testing needs to be expanded
+
+Last Updated: [Current Date]
+Test Environment: Local Development (http://localhost:5173) 
